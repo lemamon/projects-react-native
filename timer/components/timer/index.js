@@ -11,10 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Timer = (props) => {
-  const { text } = props;
-  return <Text style={styles.text}>{text}</Text>;
-};
+const Timer = ({ text }) => <Text style={styles.text}>{text}</Text>;
 
 Timer.propTypes = {
   text: PropTypes.string.isRequired,

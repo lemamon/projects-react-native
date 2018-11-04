@@ -19,14 +19,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = (props) => {
-  const { text, onPress } = props;
-  return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
-  );
-};
+const Button = ({ text, onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
+    <Text style={styles.text}>{text}</Text>
+  </TouchableOpacity>
+);
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
