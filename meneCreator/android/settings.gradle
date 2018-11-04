@@ -1,0 +1,3 @@
+rootProject.name = 'meneCreator'
+
+include ':app'
