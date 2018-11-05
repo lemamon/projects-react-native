@@ -38,7 +38,7 @@ export default class App extends Component<Props> {
     const { result } = this.state;
     return (
       <View style={styles.container}>
-        <Panel>{result}</Panel>
+        <Panel>{result.toString()}</Panel>
         <Layout onPress={this.handleClick} />
       </View>
     );
