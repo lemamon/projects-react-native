@@ -13,6 +13,7 @@
         "extensions": [".js", ".jsx"]
       }
     ],
+    "no-eval": 0,
     "global-require": "off",
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
