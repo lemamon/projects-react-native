@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Layout from './components/layout';
+import Panel from './components/panel';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,26 +10,36 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
 
 type Props = {};
 export default class App extends Component<Props> {
-  componentDidCatch() {}
+  state = {
+    result: '0',
+  };
+
+  handleClick = (b) => {
+    let { result } = this.state;
+    switch (b) {
+      case 'c':
+        result = '0';
+        break;
+      case '=':
+        result = eval(result);
+        break;
+      default:
+        result = result !== '0' ? result + b : b;
+    }
+
+    this.setState({ result });
+  };
 
   render() {
+    const { result } = this.state;
     return (
       <View style={styles.container}>
-        <Text>Sim</Text>
+        <Panel>{result}</Panel>
+        <Layout onPress={this.handleClick} />
       </View>
     );
   }
