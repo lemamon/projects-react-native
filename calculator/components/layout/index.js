@@ -36,7 +36,7 @@ const Layout = ({ onPress }) => (
     </View>
     <View style={styles.buttons}>
       <Button size={2} text="0" onPress={onPress} />
-      <Button text="," onPress={onPress} />
+      <Button text="." onPress={onPress} />
       <Button bg="#fd9536" text="=" onPress={onPress} />
     </View>
   </Fragment>
